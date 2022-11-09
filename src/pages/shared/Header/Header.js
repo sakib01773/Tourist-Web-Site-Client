@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className=' bg-emerald-100 mb-4 shadow-lg'>
+        <div className=''>
              <div className='mx-auto container'>
-            <div className="navbar">
+            <div className="navbar  bg-emerald-50 my-3 shadow-lg py-3 rounded">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -20,7 +20,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                    <li><Link>Services</Link></li>
+                    <li><Link to={"/services"}>Services</Link></li>
                     <li><Link>Blog</Link></li>
                     </ul>
                 </div>
