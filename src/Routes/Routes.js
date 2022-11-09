@@ -3,8 +3,10 @@ import Main from "../layout/Main/Main";
 import Blog from "../pages/Blog/Blog";
 import CardDetails from "../pages/CardDetails/CardDetails";
 import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
 import Reviews from "../pages/Reviews/Reviews";
 import Services from "../pages/Services/Services";
+import SignUp from "../pages/SignUp/Signup";
 
 const router = createBrowserRouter([
     {
@@ -43,7 +45,17 @@ const router = createBrowserRouter([
                         loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
                      }
                 ]
-            }
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
+       
+            },
+            {
+                path: "/signup",
+                element: <SignUp></SignUp>
+       
+            },
 
         ]
     },
