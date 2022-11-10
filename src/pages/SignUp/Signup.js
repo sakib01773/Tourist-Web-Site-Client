@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext);
+    const handleSignup = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+        .catch(err => console.error(err))
+    }
     return (
         <div className='container mx-auto my-10'>
-            <form>
+            <form onSubmit={handleSignup}>
                 <div className="min-h-screen bg-emerald-50">
                     <div className="hero-content flex-col my-5">
                         <div className="text-center">
@@ -34,7 +49,7 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" name="name" placeholder="password" className="input input-bordered" />
+                                    <input type="password" name="password" placeholder="password" className="input input-bordered" />
 
                                 </div>
 
