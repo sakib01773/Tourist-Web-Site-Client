@@ -13,6 +13,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 // toast.success('Successfully created!');
+                //comment
             })
             .catch(error => console.error(error))
     }
