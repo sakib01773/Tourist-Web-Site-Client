@@ -23,7 +23,16 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to={"/services"}>Services</Link></li>
-                        <li><Link to={"/blog"}>Blog</Link></li>
+                                {
+                                    user?.uid ? <>
+                                        <li><Link to={'/service'}>Add Service</Link></li>
+                                        <li><Link to={'/myreview'}>My Review</Link></li>
+                                        <li><Link to={'/blog'}>Blog</Link></li>
+
+                                    </> :
+                                        <li><Link to={'/blog'}>Blog</Link></li>
+                                }
+
                     </ul>
                     </div>
                     <Link to={'/home'} className="btn btn-ghost normal-case text-xl">Tourist Guide</Link>
@@ -31,7 +40,15 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                     <li><Link to={"/services"}>Services</Link></li>
-                    <li><Link to={"/blog"}>Blog</Link></li>
+                                {
+                                    user?.uid ? <>
+                                        <li><Link to={'/service'}>Add Service</Link></li>
+                                        <li><Link to={'/myreview'}>My Review</Link></li>
+                                        <li><Link to={'/blog'}>Blog</Link></li>
+
+                                    </> :
+                                        <li><Link to={'/blog'}>Blog</Link></li>
+                                }
                     </ul>
                 </div>
                 <div className="navbar-end">
