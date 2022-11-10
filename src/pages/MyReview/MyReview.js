@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../hook/useTitle';
 import MyReviewtable from '../MyReviewtable/MyReviewtable';
 
 const MyReview = () => {
+    useTitle("MyReview")
     const { user } = useContext(AuthContext)
     const [review, setReview] = useState([])
 
@@ -25,7 +27,7 @@ const MyReview = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    if (data.deleteCount > 0) {
+                    if (data.deletedCount > 0) {
                         alert('deleted successfully')
                         const remaining = review.filter(odr => odr._id !== id);
                         setReview(remaining);

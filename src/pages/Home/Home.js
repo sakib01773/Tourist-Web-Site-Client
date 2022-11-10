@@ -4,11 +4,16 @@ import img1 from '../../Assets/image/1.jpg'
 import img2 from '../../Assets/image/2.jpg'
 import img3 from '../../Assets/image/3.jpg'
 import img4 from '../../Assets/image/4.jpg'
+import useTitle from '../../hook/useTitle';
+import FAQ from '../FAQ/FAQ';
+import Gallery from '../Gallery/Gallery';
 import Limited from '../Limited/Limited';
 import "./Home.css"
 
 const Home = () => {
+    useTitle("home")
     return (
+        
         <div className='container mx-auto'>
             <div className="carousel w-full custom-carro ">
                 <div id="slide1" className="carousel-item relative w-full">
@@ -69,6 +74,12 @@ const Home = () => {
                 </div>
             </div>
             <Limited></Limited>
+            <div className='my-10'>
+                <Gallery></Gallery>
+            </div>
+            <div>
+                <FAQ></FAQ>
+            </div>
         </div>
     );
 };
